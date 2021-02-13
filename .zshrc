@@ -80,7 +80,11 @@ setopt HIST_IGNORE_SPACE
 
 
 # Open zshrc for editing, then apply the changes
-alias zshrc='nano ~/.zshrc && source ~/.zshrc'
+zshrc() {
+  nano "$DOTFILES_DIR/.zshrc"
+  echo "Reloading ..."
+  source "$DOTFILES_DIR/.zshrc"
+}
 
 
 # Run an npm command queitly and pass args to node not npm
