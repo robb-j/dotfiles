@@ -89,7 +89,7 @@ zshrc() {
 }
 
 # Update dotfiles from git
-updatedotfiles() {
+update_dotfiles() {
   START_DIR=`pwd`
   
   # go into the dotfiles dir if we aren't already there 
@@ -105,7 +105,7 @@ updatedotfiles() {
   if [ -z "$STATUS" ]
   then
     git pull origin main
-    brew bundle check
+    brew bundle install
   else
     echo "$DOTFILES_DIR is not clean:"
     echo "$STATUS"

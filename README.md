@@ -10,13 +10,20 @@ Set $ZSH & $DOTFILES_DIR in `~/.zshrc` and source this file.
 **[blue-night](./blue-night.terminal)** - custom macOS terminal profile.
 Import it in Terminal.app and export it back to apply updates.
 
-## commands
+## global commands
+
+```bash
+# Start editing the zshrc and re-source it afterwards
+zshrc
+
+# Update the dotfiles repo (if the repo is clean)
+update_dotfiles
+```
+
+## helpful commands
 
 ```bash
 # cd to/this/directory
-
-# Pull the latest version from git
-git pull origin main
 
 # check brew dependencies
 brew bundle check
