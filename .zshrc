@@ -17,6 +17,8 @@ plugins=(
   git
   kubectl
   kube-ps1
+  node
+  npm
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -86,6 +88,35 @@ zshrc() {
   source "$DOTFILES_DIR/.zshrc"
 }
 
+# Update dotfiles from git
+updatedotfiles() {
+  START_DIR=`pwd`
+  
+  # go into the dotfiles dir if we aren't already there 
+  if [ "$START_DIR" != "$DOTFILES_DIR" ]; then
+    pushd $DOTFILES_DIR > /dev/null
+  fi
+  
+  # See how git is doing
+  STATUS=`git status --porcelain`
+  
+  # If git is clean, pull and check the bundle
+  # Otherwise, output the status
+  if [ -z "$STATUS" ]
+  then
+    git pull origin main
+    brew bundle check
+  else
+    echo "$DOTFILES_DIR is not clean:"
+    echo "$STATUS"
+  fi
+  
+  # exit the dotfiles dir if we aren't there originally
+  if [ "$START_DIR" != "$DOTFILES_DIR" ]; then
+    popd > /dev/null
+  fi
+}
+
 
 # Run an npm command queitly and pass args to node not npm
 alias npr='npm run -s --'
@@ -117,32 +148,8 @@ kubeoff
 bindkey '^H' backward-kill-word
 bindkey '^[[3;5~' kill-word
 
-
-# Lazy NVM
-# -> https://til-engineering.nulogy.com/Slow-Terminal-Startup-Tip-Lazy-Load-NVM/
-lazynvm() {
-  unset -f nvm node npm npx
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-}
-
-nvm() {
-  lazynvm 
-  nvm $@
-}
- 
-node() {
-  lazynvm
-  node $@
-}
- 
-npm() {
-  lazynvm
-  npm $@
-}
-
-npx() {
-  lazynvm
-  npx $@
-}
+#
+# fnm
+#
+export PATH='"$INSTALL_DIR"':$PATH
+eval "`fnm env --shell=zsh`" 

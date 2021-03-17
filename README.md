@@ -1,48 +1,32 @@
 # robb-j's dotfiles
 
-These files are my dotfiles to be shared between dev machines
+These files are my dotfiles to be shared between development machines
 
 ## files
 
 **[zshrc](./.zshrc)** - common zsh configuration.
-Set $ZSH in `~/.zshrc` and source this file.
+Set $ZSH & $DOTFILES_DIR in `~/.zshrc` and source this file.
 
 **[blue-night](./blue-night.terminal)** - custom macOS terminal profile.
 Import it in Terminal.app and export it back to apply updates.
 
-## ideas / future work
-
-**commands to sync up/down this config**
+## commands
 
 ```bash
-sync_up() {
-  cd $DOTFILES_DIR
-  # - Fail if git is behind
-  # - Fail if uncommited changes
+# cd to/this/directory
 
-  # Get the current directory
-  brew taps > brew.taps
-  brew list > brew.apps
+# Pull the latest version from git
+git pull origin main
 
-  # Commit & push to git
-}
+# check brew dependencies
+brew bundle check
 
-sync_down() {
-  cd $DOTFILES_DIR
+# generate a new brewfile
+brew bundle dump
 
-  # Pull from git
-  git pull
+# update from the current brewfile
+brew bundle install
 
-  # Make sure the same things are tapped
-  for TAP in `cat "$DOTFILES_DIR/brew.taps"`
-  do
-    brew tap $TAP
-  done
-
-  # Make sure the same apps are installed
-  for APP in `cat "$DOTFILES_DIR/brew.apps"`
-  do
-    brew install $APP
-  done
-}
+# uninstall dependencies not in brewfile
+brew bundle cleanup
 ```
