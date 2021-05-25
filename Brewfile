@@ -2,6 +2,7 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
 
+brew "ansible"
 brew "argocd"
 brew "deno"
 brew "dive"
