@@ -27,13 +27,13 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 #
 
-alias dc='docker-compose'
+alias dc='docker compose'
 alias de='docker exec -it'
 alias dps='docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"'
 alias dce='docker-compose exec'
 alias drmi='docker images -q |xargs docker rmi'
 alias d1='docker run -it --rm'
-alias k8s='kubectl'
+alias k='kubectl'
 
 # start/stop Docker
 alias dup='open /Applications/Docker.app'
