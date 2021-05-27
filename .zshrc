@@ -140,7 +140,6 @@ KUBE_PS1_SUFFIX="] "
 KUBE_PS1_SYMBOL_DEFAULT=
 KUBE_PS1_SEPARATOR=
 PROMPT=$PROMPT'$(kube_ps1)'
-kubeoff
 
 
 # Better key bindings
