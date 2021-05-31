@@ -52,14 +52,11 @@ function nginx() {
 # Create a Kubernetes pod and run a command in it
 function k1() {
   if [ -z "$1" ]; then
-    echo "Usage: k1 <image> <cmd>"
+    echo "Usage: k1 <name> <image> [cmd]"
     return 1
   fi
-  if [ -z "$2" ]; then
-    echo "Usage: k1 <image> <cmd>"
-    return 1
-  fi
-  kubectl run -it --rm "k1-$1-$2" --generator=run-pod/v1 --image -- $@
+  name=`date | openssl sha256 | cut -c 1-8`
+  kubectl run -it --rm "k1-$name" --restart=Never --image=$1 -- ${@:2}
 }
 
 
