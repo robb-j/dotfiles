@@ -52,7 +52,7 @@ function nginx() {
 # Create a Kubernetes pod and run a command in it
 function k1() {
   if [ -z "$1" ]; then
-    echo "Usage: k1 <name> <image> [cmd]"
+    echo "Usage: k1 <image> [cmd]"
     return 1
   fi
   name=`date | openssl sha256 | cut -c 1-8`
