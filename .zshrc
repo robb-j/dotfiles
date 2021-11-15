@@ -146,5 +146,10 @@ bindkey '^[[3;5~' kill-word
 #
 # fnm
 #
-export PATH='"$INSTALL_DIR"':$PATH
 eval "`fnm env --shell=zsh`" 
+
+#
+# go
+# https://golang.org/doc/gopath_code#GOPATH
+#
+export PATH=$PATH:$(go env GOPATH)/bin
