@@ -146,7 +146,7 @@ bindkey '^[[3;5~' kill-word
 #
 # fnm
 #
-eval "`fnm env --shell=zsh`" 
+eval "`fnm env --shell=zsh`"
 
 #
 # go

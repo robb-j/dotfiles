@@ -1,0 +1,17 @@
+# 
+# Device-specific variables
+# 
+export DOTFILES_DIR=/home/user/dotfiles
+export ZSH=/home/user/.oh-my-zsh
+
+# TODO: 
+# - pull latest dotfiles
+# - update 
+
+export PATH=/home/user/.fnm:$PATH
+fnm use lts-gallium
+
+# 
+# Import common configuration
+# 
+source $DOTFILES_DIR/.zshrc
