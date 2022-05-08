@@ -1,9 +1,10 @@
 FROM golang:1.17-alpine as golang
+FROM node:18-alpine as nodejs
 FROM alpine:3.15.0
 
 ENV KUBE_VERSION=v1.23.4
 
-RUN apk add --no-cache openssh git zsh sudo curl kubectx \
+RUN apk add --no-cache openssh git zsh sudo curl kubectx gnupg libgcc python3 \
   && mkdir -p /home/user \
   && addgroup -g 1000 user \
   && adduser -D -u 1000 -G user -s /bin/zsh user \
@@ -24,7 +25,9 @@ RUN apk add --no-cache openssh git zsh sudo curl kubectx \
 COPY ["sshd_config", "/etc/ssh/sshd_config"]
 COPY ["entrypoint.sh", "/entrypoint.sh"]
 COPY ["motd", "/etc/motd"]
-COPY --from=golang ["/usr/local/go/bin/go", "/usr/local/go/bin/gofmt", "/usr/local/bin"]
+COPY --from=golang ["/usr/local/go/bin/", "/usr/local/bin"]
+COPY --from=nodejs ["/usr/local/bin/", "/usr/local/bin"]
+COPY --from=nodejs ["/usr/local/lib/node_modules/", "/usr/local/lib/node_modules"]
 
 WORKDIR /home/user/
 USER user
@@ -35,11 +38,11 @@ RUN mkdir .ssh \
   && touch .ssh/known_hosts \
   && touch .ssh/authorized_keys \
   
-  && ssh-keyscan github.com > .ssh/known_hosts \
+  && ssh-keyscan github.com > .ssh/known_hosts
   
-  && curl -fsSL https://fnm.vercel.app/install | zsh -s -- --skip-shell \
-  && /home/user/.fnm/fnm install lts/gallium \
-  && /home/user/.fnm/fnm default lts/gallium
+  # && curl -fsSL https://fnm.vercel.app/install | zsh -s -- --skip-shell \
+  # && /home/user/.fnm/fnm install lts/gallium \
+  # && /home/user/.fnm/fnm default lts/gallium
 
 
 USER root
