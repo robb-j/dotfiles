@@ -146,7 +146,10 @@ bindkey '^[[3;5~' kill-word
 #
 # fnm
 #
-eval "`fnm env --shell=zsh --use-on-cd`"
+if [ -x fnm ]
+then
+  eval "`fnm env --shell=zsh --use-on-cd`"
+fi
 
 #
 # go
