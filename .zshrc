@@ -146,10 +146,21 @@ bindkey '^[[3;5~' kill-word
 #
 # fnm
 #
-eval "`fnm env --shell=zsh`"
+eval "`fnm env --shell=zsh --use-on-cd`"
 
 #
 # go
 # https://golang.org/doc/gopath_code#GOPATH
 #
 export PATH=$PATH:$(go env GOPATH)/bin
+
+#
+# yubikey
+#
+# 1. configure SSH to use GPG
+# 2. start gpg-agent, if it isn't started already
+# 3. tell GPG the current terminal
+# export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+# gpgconf --launch gpg-agent
+# gpg-connect-agent /bye
+# export GPG_TTY=$(tty)
