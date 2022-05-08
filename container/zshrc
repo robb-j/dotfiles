@@ -9,7 +9,7 @@ export ZSH=/home/user/.oh-my-zsh
 # - update 
 
 export PATH=/home/user/.fnm:$PATH
-fnm use lts-gallium
+# fnm use lts-gallium
 
 # 
 # Import common configuration
