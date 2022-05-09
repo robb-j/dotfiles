@@ -146,7 +146,7 @@ bindkey '^[[3;5~' kill-word
 #
 # fnm
 #
-if [ -x fnm ]
+if [ -x `which fnm` ]
 then
   eval "`fnm env --shell=zsh --use-on-cd`"
 fi
