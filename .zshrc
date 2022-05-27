@@ -144,20 +144,6 @@ bindkey '^H' backward-kill-word
 bindkey '^[[3;5~' kill-word
 
 #
-# fnm
-#
-if [ -x fnm ]
-then
-  eval "`fnm env --shell=zsh --use-on-cd`"
-fi
-
-#
-# go
-# https://golang.org/doc/gopath_code#GOPATH
-#
-export PATH=$PATH:$(go env GOPATH)/bin
-
-#
 # yubikey
 #
 # 1. configure SSH to use GPG

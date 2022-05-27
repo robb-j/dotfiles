@@ -4,8 +4,17 @@ These files are my dotfiles to be shared between development machines
 
 ## files
 
-**[zshrc](./.zshrc)** - common zsh configuration.
-Set $ZSH & $DOTFILES_DIR in `~/.zshrc` and source this file.
+**[zshrc](./.zshrc)** - common zsh configuration, usage:
+
+```sh
+# ~/.zprofile
+export ZSH="$HOME/.oh-my-zsh"
+export DOTFILES_DIR="$HOME/dev/dotfiles"
+source "$DOTFILES_DIR/.zprofile"
+
+# ~/.zshrc
+source "$DOTFILES_DIR/.zshrc"
+```
 
 **[blue-night](./blue-night.terminal)** - custom macOS terminal profile.
 Import it in Terminal.app and export it back to apply updates.
