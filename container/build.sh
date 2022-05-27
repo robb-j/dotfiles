@@ -2,9 +2,9 @@
 
 set -e
 
-docker rmi test || true
+docker rmi dotfiles || true
 
-docker build -t test container
+docker build -t dotfiles container
 
 SERVER_KEY=$(cat container/server_key)
 AUTHORIZED_KEYS=$(cat container/authorized_keys)
@@ -17,4 +17,4 @@ docker run -it \
   -e "AUTHORIZED_KEYS=$AUTHORIZED_KEYS" \
   -e "KUBECONFIG=$KUBECONFIG" \
   -e "DOTFILES_REMOTE=https://github.com/robb-j/dotfiles.git" \
-  test
+  dotfiles

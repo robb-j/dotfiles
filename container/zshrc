@@ -1,8 +1,4 @@
-# 
-# Device-specific variables
-# 
-export DOTFILES_DIR=/home/user/dotfiles
-export ZSH=/home/user/.oh-my-zsh
+
 
 # TODO: 
 # - pull latest dotfiles
@@ -14,4 +10,4 @@ export PATH=/home/user/.fnm:$PATH
 # 
 # Import common configuration
 # 
-source $DOTFILES_DIR/.zshrc
+source "$DOTFILES_DIR/.zshrc"

@@ -4,7 +4,7 @@ FROM alpine:3.15.0
 
 ENV KUBE_VERSION=v1.23.4
 
-RUN apk add --no-cache openssh git zsh sudo curl kubectx gnupg libgcc python3 \
+RUN apk add --no-cache openssh git zsh sudo curl kubectx gnupg libgcc python3 nano \
   && mkdir -p /home/user \
   && addgroup -g 1000 user \
   && adduser -D -u 1000 -G user -s /bin/zsh user \
@@ -33,6 +33,7 @@ WORKDIR /home/user/
 USER user
 
 COPY --chown=user:user ["zshrc", "/home/user/.zshrc"]
+COPY --chown=user:user ["zprofile", "/home/user/.zprofile"]
 
 RUN mkdir .ssh \
   && touch .ssh/known_hosts \

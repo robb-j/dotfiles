@@ -1,0 +1,10 @@
+# 
+# Device-specific variables
+# 
+export DOTFILES_DIR=/home/user/dotfiles
+export ZSH=/home/user/.oh-my-zsh
+
+# 
+# Import common configuration
+# 
+source "$DOTFILES_DIR/.zprofile"

@@ -1,7 +1,7 @@
 #
 # fnm
 #
-if [ -x `which fnm` ]
+if type -p fnm > /dev/null
 then
   eval "`fnm env --shell=zsh --use-on-cd`"
 fi
@@ -9,9 +9,8 @@ fi
 #
 # go
 #
-if [ -x `which go` ]
+if type -p fnm > /dev/null
 then
   # https://golang.org/doc/gopath_code#GOPATH
   export PATH=$PATH:$(go env GOPATH)/bin
 fi
-
