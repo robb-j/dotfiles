@@ -59,8 +59,12 @@ ssh-keygen container/server_key
 cat ~/.ssh/id_rsa.pub > container/authorized_keys
 
 # build and run development
-./container/build.sh
+./container/dev.sh
 
 # ssh into the container
 ssh -p30022 user@0.0.0.0
+
+# stop the container (in a new terminal)
+docker ps
+docker stop $CONTAINER_ID
 ```

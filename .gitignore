@@ -1,2 +1,6 @@
 Brewfile.lock.json
 .DS_Store
+
+container/authorized_keys
+container/server_key
+container/server_key.pub
