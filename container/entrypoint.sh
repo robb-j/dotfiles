@@ -2,16 +2,6 @@
 
 set -e
 
-# TODO: TBR - Ensure the correct permission on mounted ssh files
-# chown -R user:user /home/user/.ssh
-
-# TODO: TBR
-# if [ -f "/home/user/.ssh/authorized_keys" ]
-# then
-#   chmod 700 /home/user/.ssh/authorized_keys
-# fi
-
-
 
 # TODO: is this needed?
 if [ ! -d "/var/run/sshd" ]

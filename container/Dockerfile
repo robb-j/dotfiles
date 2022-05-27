@@ -40,10 +40,6 @@ RUN mkdir .ssh \
   && touch .ssh/authorized_keys \
   
   && ssh-keyscan github.com > .ssh/known_hosts
-  
-  # && curl -fsSL https://fnm.vercel.app/install | zsh -s -- --skip-shell \
-  # && /home/user/.fnm/fnm install lts/gallium \
-  # && /home/user/.fnm/fnm default lts/gallium
 
 
 USER root
