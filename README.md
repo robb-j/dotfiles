@@ -62,7 +62,7 @@ cat ~/.ssh/id_rsa.pub > container/authorized_keys
 ./container/dev.sh
 
 # ssh into the container
-ssh -p30022 user@0.0.0.0
+ssh -p 30022 user@0.0.0.0
 
 # stop the container (in a new terminal)
 docker ps
