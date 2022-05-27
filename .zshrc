@@ -118,10 +118,6 @@ update_dotfiles() {
 alias npr='npm run -s --'
 
 
-# Use experimental buildkit docker builder (for multi-arch builds)
-export COMPOSE_DOCKER_CLI_BUILD=1
-export DOCKER_BUILDKIT=1
-
 # Restart macOS's DNS
 alias reset_dns='sudo killall -HUP mDNSResponder; sleep 2;'
 
