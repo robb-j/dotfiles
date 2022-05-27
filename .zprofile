@@ -9,7 +9,7 @@ fi
 #
 # go
 #
-if type -p fnm > /dev/null
+if type -p go > /dev/null
 then
   # https://golang.org/doc/gopath_code#GOPATH
   export PATH=$PATH:$(go env GOPATH)/bin
