@@ -11,6 +11,9 @@ name: 'Build Container'
 on:
   workflow_dispatch:
 
+permissions:
+  packages: write
+
 env:
   REGISTRY: ghcr.io/robb-j/dotfiles
 
