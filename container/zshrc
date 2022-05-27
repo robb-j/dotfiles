@@ -1,0 +1,11 @@
+
+# TODO: 
+# - pull latest dotfiles
+# - update 
+
+export PATH=/home/user/.fnm:$PATH
+
+# 
+# Import common configuration
+# 
+source "$DOTFILES_DIR/.zshrc"

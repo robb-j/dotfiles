@@ -1,0 +1,13 @@
+# Check inside the user's home directory
+AuthorizedKeysFile      %h/.ssh/authorized_keys
+
+PasswordAuthentication no
+PermitEmptyPasswords no
+
+# Feel free to re-enable these if your use case requires them.
+AllowTcpForwarding no
+GatewayPorts no
+X11Forwarding no
+
+# override default of no subsystems
+Subsystem       sftp    /usr/lib/ssh/sftp-server

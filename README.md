@@ -21,7 +21,7 @@ Import it in Terminal.app and export it back to apply updates.
 
 ## global commands
 
-```bash
+```sh
 # Start editing the zshrc and re-source it afterwards
 zshrc
 
@@ -31,7 +31,7 @@ update_dotfiles
 
 ## helpful commands
 
-```bash
+```sh
 # cd to/this/directory
 
 # check brew dependencies
@@ -45,4 +45,26 @@ brew bundle install
 
 # uninstall dependencies not in brewfile
 brew bundle cleanup
+```
+
+## container use
+
+```sh
+# cd to/this/folder
+
+# generate server key
+ssh-keygen container/server_key
+
+# setup authorized keys
+cat ~/.ssh/id_rsa.pub > container/authorized_keys
+
+# build and run development
+./container/dev.sh
+
+# ssh into the container
+ssh -p 30022 user@0.0.0.0
+
+# stop the container (in a new terminal)
+docker ps
+docker stop $CONTAINER_ID
 ```
