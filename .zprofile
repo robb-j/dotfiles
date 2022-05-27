@@ -1,7 +1,7 @@
 #
 # fnm
 #
-if [ -x fnm ]
+if [ -x `which fnm` ]
 then
   eval "`fnm env --shell=zsh --use-on-cd`"
 fi
@@ -9,11 +9,9 @@ fi
 #
 # go
 #
-if [ -x go ]
+if [ -x `which go` ]
 then
   # https://golang.org/doc/gopath_code#GOPATH
   export PATH=$PATH:$(go env GOPATH)/bin
 fi
 
-# custom ssh
-export PATH=$(brew --prefix openssh)/bin:$PATH
