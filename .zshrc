@@ -118,10 +118,6 @@ update_dotfiles() {
 alias npr='npm run -s --'
 
 
-# Use experimental buildkit docker builder (for multi-arch builds)
-export COMPOSE_DOCKER_CLI_BUILD=1
-export DOCKER_BUILDKIT=1
-
 # Restart macOS's DNS
 alias reset_dns='sudo killall -HUP mDNSResponder; sleep 2;'
 
@@ -142,20 +138,6 @@ PROMPT=$PROMPT'$(kube_ps1)'
 # https://github.com/ohmyzsh/ohmyzsh/issues/7609
 bindkey '^H' backward-kill-word
 bindkey '^[[3;5~' kill-word
-
-#
-# fnm
-#
-if [ -x `which fnm` ]
-then
-  eval "`fnm env --shell=zsh --use-on-cd`"
-fi
-
-#
-# go
-# https://golang.org/doc/gopath_code#GOPATH
-#
-export PATH=$PATH:$(go env GOPATH)/bin
 
 #
 # yubikey
