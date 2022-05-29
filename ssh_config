@@ -1,0 +1,25 @@
+# Config
+
+# Stop localhost storing known_hosts
+Host localhost 0.0.0.0 127.0.0.1
+  UserKnownHostsFile=/dev/null
+
+#
+# Cloudlab
+#
+Host ssh.r0b.io r0b.io
+  User user
+  HostName ssh.r0b.io
+  Port 30022
+
+#
+# Homelab
+#
+Host aero
+  HostName aero.local
+Host daim
+  HostName daim.local
+Host chomp
+  HostName chomp.local
+Host bounty
+  HostName bounty.local

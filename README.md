@@ -16,6 +16,13 @@ source "$DOTFILES_DIR/.zprofile"
 source "$DOTFILES_DIR/.zshrc"
 ```
 
+**[ssh_config](./ssh_config)** - ssh configuration
+
+```conf
+# ~/.ssh/config
+Include ~/dev/dotfiles/ssh_config
+```
+
 **[blue-night](./blue-night.terminal)** - custom macOS terminal profile.
 Import it in Terminal.app and export it back to apply updates.
 
