@@ -5,8 +5,7 @@ export ZSH=${ZSH:-"/Users/rob/.oh-my-zsh"}
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
-
+export ZSH_THEME=${ZSH_THEME:-"nicoulaj"}
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -127,11 +126,13 @@ export KUBE_EDITOR=nano
 
 
 # Configure kube-ps1
-KUBE_PS1_PREFIX="["
-KUBE_PS1_SUFFIX="] "
-KUBE_PS1_SYMBOL_DEFAULT=
+KUBE_PS1_PREFIX=""
+KUBE_PS1_SUFFIX=" "
+KUBE_PS1_SYMBOL_ENABLE=false
 KUBE_PS1_SEPARATOR=
-PROMPT=$PROMPT'$(kube_ps1)'
+KUBE_PS1_CTX_COLOR=blue
+KUBE_PS1_NS_COLOR=cyan
+PROMPT='$(kube_ps1)'$PROMPT
 
 
 # Better key bindings
