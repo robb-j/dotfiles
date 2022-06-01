@@ -140,13 +140,3 @@ PROMPT='$(kube_ps1)'$PROMPT
 bindkey '^H' backward-kill-word
 bindkey '^[[3;5~' kill-word
 
-#
-# yubikey
-#
-# 1. configure SSH to use GPG
-# 2. start gpg-agent, if it isn't started already
-# 3. tell GPG the current terminal
-# export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-# gpgconf --launch gpg-agent
-# gpg-connect-agent /bye
-# export GPG_TTY=$(tty)
