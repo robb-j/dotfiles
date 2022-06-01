@@ -4,7 +4,7 @@ FROM alpine:3.15.0
 
 ENV KUBE_VERSION=v1.23.4
 
-RUN apk add --no-cache openssh git zsh sudo curl kubectx gnupg libgcc python3 nano \
+RUN apk add --no-cache openssh git zsh zsh-vcs sudo curl kubectx gnupg libgcc python3 nano \
   && mkdir -p /home/user \
   && addgroup -g 1000 user \
   && adduser -D -u 1000 -G user -s /bin/zsh user \
