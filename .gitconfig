@@ -1,0 +1,12 @@
+[commit]
+	gpgSign = true
+[gpg]
+	program = gpg
+[init]
+	defaultBranch = main
+[tag]
+	gpgSign = true
+[core]
+	pager = 
+[push]
+	followTags = true
