@@ -23,6 +23,14 @@ source "$DOTFILES_DIR/.zshrc"
 Include ~/dev/dotfiles/ssh_config
 ```
 
+**[gitconfig](./.gitconfig)** - git configuration
+
+```toml
+# ~/.gitconfig
+[include]
+  path = ~/dev/dotfiles/.gitconfig
+```
+
 **[blue-night](./blue-night.terminal)** - custom macOS terminal profile.
 Import it in Terminal.app and export it back to apply updates.
 
