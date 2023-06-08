@@ -112,6 +112,7 @@ update_dotfiles() {
   fi
 }
 
+alias p1='docker run -it --rm -p 5432:5432 -e POSTGRES_USER=user -e POSTGRES_PASSWORD=secret -e POSTGRES_DB=user postgres:12-alpine'
 
 # Run an npm command queitly and pass args to node not npm
 alias npr='npm run -s --'
