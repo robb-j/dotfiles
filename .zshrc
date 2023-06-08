@@ -121,6 +121,10 @@ alias npr='npm run -s --'
 alias reset_dns='sudo killall -HUP mDNSResponder; sleep 2;'
 
 
+# Generate a secure secret
+alias secret="node -e 'console.log(crypto.randomUUID())'"
+
+
 # Use nano to edit files from kubectl
 export KUBE_EDITOR=nano
 
