@@ -8,9 +8,15 @@ These files are my dotfiles to be shared between development machines
 
 ```sh
 # ~/.zprofile
+# (for Apple Silicon)
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 export ZSH="$HOME/.oh-my-zsh"
 export DOTFILES_DIR="$HOME/dev/dotfiles"
 source "$DOTFILES_DIR/.zprofile"
+
+# (optional)
+# export PATH=$(brew --prefix openssh)/bin:$PATH
 
 # ~/.zshrc
 source "$DOTFILES_DIR/.zshrc"
