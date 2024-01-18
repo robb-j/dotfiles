@@ -89,7 +89,7 @@ defaults write com.panic.Nova ShowIgnoredFiles -bool "true"
 defaults write com.panic.Nova ShowWrapGuide -bool "true"
 defaults write com.panic.Nova TabWidth -integer 2
 defaults write com.panic.Nova TerminalFontName "BerkeleyMonoVariable-Regular"
-defaults write com.panic.Nova TerminalFontSize -integer 2
+defaults write com.panic.Nova TerminalFontSize -integer 14
 defaults write com.panic.Nova TerminalUseGPUAcceleration -boolean "true"
 defaults write com.panic.Nova TerminalUseOptionAsMeta -boolean "true"
 

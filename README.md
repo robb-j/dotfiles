@@ -60,7 +60,15 @@ brew bundle install
 
 # uninstall dependencies not in brewfile
 brew bundle cleanup
+
+# create a defaults diff
+defaults read > tmp/before.txt
+  # do some changes ...
+defaults read > tmp/after.txt
+opendiff tmp/before.txt tmp/after.txt
 ```
+
+- https://scriptingosx.com/2016/11/editing-property-lists/
 
 ## container use
 
