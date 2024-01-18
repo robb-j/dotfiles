@@ -60,7 +60,7 @@ plutil -replace ICloudViewSettings.ExtendedListViewSettingsV2.textSize -integer 
 plutil -replace FXDefaultSearchScope -string SCcf $F
 plutil -replace FXEnableExtensionChangeWarning -integer 0 $F
 plutil -replace FXEnableRemoveFromICloudDriveWarning -integer 0 $F
-plutil -replace FXRemoveOldTrashItems -integer 0 $F
+plutil -replace FXRemoveOldTrashItems -integer 1 $F
 plutil -replace ShowRecentTags -integer 0 $F
 plutil -replace SidebarDevicesSectionDisclosedState -integer 0 $F
 defaults import com.apple.Finder tmp/finder.xml
