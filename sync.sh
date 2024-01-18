@@ -1,10 +1,13 @@
 #!/usr/bin/env zsh
 
+MAC_VARIANT="${MAC_VARIANT:-Personal}"
+
 if ! $(which brew > /dev/null)
 then
-  echo "Please install homebrew"
-  open "https://github.com/Homebrew/brew/releases/latest"
-  exit 1
+  echo "install: Homebrew"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+else
+  echo "skip: oh-my-zsh"
 fi
 
 if [ ! -d $ZSH ]
@@ -16,25 +19,78 @@ else
 fi
 
 echo
-echo "=== Homebrew packages ==="
 echo
+echo "=== Homebrew packages ==="
 brew bundle install
 
 echo
-echo "=== MacOS apps ==="
 echo
-mas install 1660931205 # Yoath
-mas install 1633886387 # BrowserNow
-mas install 1606145041 # Sleeve
-mas install 1529448980 # Reeder 5
-mas install 1594420480 # Prompt 3
-mas install 1545870783 # System Color Picker
-mas install 1289583905 # Pixelmator Pro
-mas install 1497506650 # Yubico Authenticator
-mas install 1518425043 # Boop
-mas install 904280696 # Things 3
-mas install 497799835 # Xcode
+echo "=== App configuration ==="
 
-echo
-echo "=== Third-party apps ==="
-echo 
+# Dock
+defaults write com.apple.dock "autohide" -bool "true"
+defaults write com.apple.dock "mineffect" -string "genie"
+defaults write com.apple.dock "magnification" -bool "true"
+defaults write com.apple.dock "tilesize" -int 50
+defaults write com.apple.dock "largesize" -int 60
+defaults write com.apple.dock "mru-spaces" -int 0
+killall Dock
+
+# WindowManager
+defaults write com.apple.WindowManager "EnableStandardClickToShowDesktop" -bool false
+defaults write -g "com.apple.trackpad.scaling" "1"
+defaults write -g "AppleActionOnDoubleClick" -string Minimize
+defaults write -g "AppleShowAllExtensions" -int 1
+defaults write -g "AppleInterfaceStyleSwitchesAutomatically" 1 # doesn't update
+killall WindowManager
+
+# Finder
+# This whole bit might just be overkill
+mkdir -p tmp
+F=tmp/finder.xml
+defaults export com.apple.Finder $F
+plutil -replace DesktopViewSettings.IconViewSettings.arrangeBy -string kind $F
+plutil -replace DesktopViewSettings.IconViewSettings.iconSize -integer 128 $F
+plutil -replace StandardViewSettings.ListViewSettings.iconSize -integer 32 $F
+plutil -replace StandardViewSettings.ListViewSettings.textSize -integer 14 $F
+plutil -replace StandardViewSettings.ExtendedListViewSettingsV2.iconSize -integer 32 $F
+plutil -replace StandardViewSettings.ExtendedListViewSettingsV2.textSize -integer 14 $F
+plutil -replace ICloudViewSettings.ExtendedListViewSettingsV2.iconSize -integer 32 $F
+plutil -replace ICloudViewSettings.ExtendedListViewSettingsV2.textSize -integer 14 $F
+plutil -replace FXDefaultSearchScope -string SCcf $F
+plutil -replace FXEnableExtensionChangeWarning -integer 0 $F
+plutil -replace FXEnableRemoveFromICloudDriveWarning -integer 0 $F
+plutil -replace FXRemoveOldTrashItems -integer 0 $F
+plutil -replace ShowRecentTags -integer 0 $F
+plutil -replace SidebarDevicesSectionDisclosedState -integer 0 $F
+defaults import com.apple.Finder tmp/finder.xml
+killall Finder
+
+if [[ "$MAC_VARIANT" == "OpenLab" ]]
+then
+  defaults write -g AppleAccentColor -int 1
+else
+  defaults write -g AppleAccentColor -int 3
+fi
+
+# Nova
+echo "- Nova"
+defaults write com.panic.Nova ExtensionsDeveloperEnabled -bool "true"
+defaults write com.panic.Nova ShowSourceControlInlineBlame -bool "false"
+defaults write com.panic.Nova TerminalUseOptionAsMeta -bool "true"
+defaults write com.panic.Nova FontName "BerkeleyMonoVariable-Regular"
+defaults write com.panic.Nova FontSize 15
+defaults write com.panic.Nova DefaultSyntaxMode markdown
+defaults write com.panic.Nova ExtendContentBeyondLastLine 3
+defaults write com.panic.Nova IndentationStyle 0
+defaults write com.panic.Nova ShowColorPreviewsInGutter -bool "false"
+defaults write com.panic.Nova ShowHiddenFiles -bool "true"
+defaults write com.panic.Nova ShowIgnoredFiles -bool "true"
+defaults write com.panic.Nova ShowWrapGuide -bool "true"
+defaults write com.panic.Nova TabWidth -integer 2
+defaults write com.panic.Nova TerminalFontName "BerkeleyMonoVariable-Regular"
+defaults write com.panic.Nova TerminalFontSize -integer 2
+defaults write com.panic.Nova TerminalUseGPUAcceleration -boolean "true"
+defaults write com.panic.Nova TerminalUseOptionAsMeta -boolean "true"
+
+# ...

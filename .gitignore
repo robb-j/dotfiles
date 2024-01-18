@@ -4,3 +4,5 @@ Brewfile.lock.json
 container/authorized_keys
 container/server_key
 container/server_key.pub
+
+tmp
