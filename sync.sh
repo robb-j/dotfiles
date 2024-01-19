@@ -92,5 +92,6 @@ defaults write com.panic.Nova TerminalFontName "BerkeleyMonoVariable-Regular"
 defaults write com.panic.Nova TerminalFontSize -integer 14
 defaults write com.panic.Nova TerminalUseGPUAcceleration -boolean "true"
 defaults write com.panic.Nova TerminalUseOptionAsMeta -boolean "true"
+defaults write com.panic.Nova WelcomeAutomaticallyAddRecentProjects -boolean "false"
 
 # ...
