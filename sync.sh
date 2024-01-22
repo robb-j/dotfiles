@@ -94,4 +94,13 @@ defaults write com.panic.Nova TerminalUseGPUAcceleration -boolean "true"
 defaults write com.panic.Nova TerminalUseOptionAsMeta -boolean "true"
 defaults write com.panic.Nova WelcomeAutomaticallyAddRecentProjects -boolean "false"
 
+# Music
+defaults write com.apple.Music dontWarnAboutRequiringExternalHardware -boolean "true"
+defaults write com.apple.Music losslessEnabled -integer 1
+defaults write com.apple.Music preferredDownloadAudioQuality -integer 20
+defaults write com.apple.Music preferredStreamPlaybackAudioQuality -integer 15
+
+# Sleeve
+write com.replay.sleeve displayDockIcon -bool false
+
 # ...
