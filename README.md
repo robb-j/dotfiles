@@ -72,6 +72,9 @@ defaults read > tmp/before.txt
   # do some changes ...
 defaults read > tmp/after.txt
 opendiff tmp/before.txt tmp/after.txt
+
+# force install rosetta
+sudo /usr/sbin/softwareupdate --install-rosetta --agree-to-license
 ```
 
 - https://scriptingosx.com/2016/11/editing-property-lists/
