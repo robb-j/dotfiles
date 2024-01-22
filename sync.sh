@@ -99,6 +99,7 @@ defaults write com.apple.Music dontWarnAboutRequiringExternalHardware -boolean "
 defaults write com.apple.Music losslessEnabled -integer 1
 defaults write com.apple.Music preferredDownloadAudioQuality -integer 20
 defaults write com.apple.Music preferredStreamPlaybackAudioQuality -integer 15
+defaults write com.apple.Music userWantsPlaybackNotifications -boolean "false"
 
 # Sleeve
 write com.replay.sleeve displayDockIcon -bool false
