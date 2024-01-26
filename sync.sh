@@ -93,6 +93,7 @@ defaults write com.panic.Nova TerminalFontSize -integer 14
 defaults write com.panic.Nova TerminalUseGPUAcceleration -boolean "true"
 defaults write com.panic.Nova TerminalUseOptionAsMeta -boolean "true"
 defaults write com.panic.Nova WelcomeAutomaticallyAddRecentProjects -boolean "false"
+defaults write com.panic.Nova ShowFoldersAboveFiles -boolean "true"
 
 # Music
 defaults write com.apple.Music dontWarnAboutRequiringExternalHardware -boolean "true"
