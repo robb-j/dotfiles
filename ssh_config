@@ -15,11 +15,18 @@ Host ssh.r0b.io r0b.io
 #
 # Homelab
 #
+Host homelab.r0b.io homelab
+  HostName homelab.r0b.io
+  User rob
+  Port 33022
+
 Host aero
   HostName aero.local
-Host daim
-  HostName daim.local
-Host chomp
-  HostName chomp.local
 Host bounty
   HostName bounty.local
+Host chomp
+  HostName chomp.local
+Host daim
+  HostName daim.local
+Host eclair
+  HostName eclair.local

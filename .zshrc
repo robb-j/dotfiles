@@ -145,3 +145,15 @@ PROMPT='$(kube_ps1)'$PROMPT
 bindkey '^H' backward-kill-word
 bindkey '^[[3;5~' kill-word
 
+
+#
+# Add PlatformIO to the path
+#
+export PATH="${PATH}:${HOME}/.platformio/penv/bin"
+
+#
+# krew
+#
+export PATH="${PATH}:${HOME}/.krew/bin"
+
+export PATH="${PATH}:${HOME}/Library/Python/3.11/bin"
