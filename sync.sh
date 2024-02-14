@@ -103,6 +103,12 @@ defaults write com.apple.Music preferredStreamPlaybackAudioQuality -integer 15
 defaults write com.apple.Music userWantsPlaybackNotifications -boolean "false"
 
 # Sleeve
-write com.replay.sleeve displayDockIcon -bool false
+defaults write com.replay.sleeve displayDockIcon -bool false
+
+# Color Picker
+defaults write com.sindresorhus.Color-Picker showInMenuBar -bool true
+defaults write com.sindresorhus.Color-Picker menuBarItemClickAction -string "showColorSampler"
+defaults write com.sindresorhus.Color-Picker hashPrefixInHexColor -bool true
+defaults write com.sindresorhus.Color-Picker copyColorAfterPicking -bool true
 
 # ...
