@@ -7,7 +7,7 @@ then
   echo "install: Homebrew"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
-  echo "skip: oh-my-zsh"
+  echo "skip: homebrew"
 fi
 
 if [ ! -d $ZSH ]
