@@ -157,3 +157,8 @@ export PATH="${PATH}:${HOME}/.platformio/penv/bin"
 export PATH="${PATH}:${HOME}/.krew/bin"
 
 export PATH="${PATH}:${HOME}/Library/Python/3.11/bin"
+
+# Note - does this only work on amd64?
+export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
+export PATH="${PATH}:${HOME}/.cargo/bin"
+# /opt/homebrew/opt/rustup/share/zsh/site-functions
