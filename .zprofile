@@ -15,10 +15,7 @@ then
   export PATH=$PATH:$(go env GOPATH)/bin
 fi
 
-#
-# Completions
-#
-if type brew &>/dev/null
-then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-fi
+# 
+# deno
+# 
+export PATH="${PATH}:${HOME}/.deno/bin"

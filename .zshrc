@@ -156,4 +156,21 @@ export PATH="${PATH}:${HOME}/.platformio/penv/bin"
 #
 export PATH="${PATH}:${HOME}/.krew/bin"
 
+# 
+# Python 3
+# 
 export PATH="${PATH}:${HOME}/Library/Python/3.11/bin"
+
+#
+# Completions
+#
+FPATH="${HOME}/.zsh/completions:${FPATH}"
+
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fi
+
+# Initialise zsh completions (originally from deno install script)
+autoload -Uz compinit
+compinit
