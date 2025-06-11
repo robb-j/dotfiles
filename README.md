@@ -75,6 +75,10 @@ opendiff tmp/before.txt tmp/after.txt
 
 # force install rosetta
 sudo /usr/sbin/softwareupdate --install-rosetta --agree-to-license
+
+# install deno
+# > path / completions: (no)
+curl -fsSL https://deno.land/install.sh | sh
 ```
 
 - https://scriptingosx.com/2016/11/editing-property-lists/
