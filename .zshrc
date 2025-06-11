@@ -161,6 +161,16 @@ export PATH="${PATH}:${HOME}/.krew/bin"
 # 
 export PATH="${PATH}:${HOME}/Library/Python/3.11/bin"
 
+# 
+# Rust
+# 
+if type rustup &>/dev/null
+then
+  export PATH="$(brew --prefix)/opt/rustup/bin:$PATH"
+  export PATH="${PATH}:${HOME}/.cargo/bin"
+  FPATH="${FPATH}:$(brew --prefix)/opt/rustup/share/zsh/site-functions"
+fi
+
 #
 # Completions
 #
