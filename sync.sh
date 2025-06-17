@@ -112,3 +112,14 @@ defaults write com.sindresorhus.Color-Picker hashPrefixInHexColor -bool true
 defaults write com.sindresorhus.Color-Picker copyColorAfterPicking -bool true
 
 # ...
+
+if [ ! -d ~/.deno ]
+then
+  echo "Install Deno v1"
+  
+  # https://github.com/denoland/deno_install
+  # https://docs.deno.com/runtime/reference/cli/completions/
+  curl -fsSL https://deno.land/install.sh | sh -s v1.46.3
+  mkdir -p ~/.zsh/completions
+  ~/.deno/bin/deno completions zsh > ~/.zsh/completions/_deno
+fi
