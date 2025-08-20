@@ -18,19 +18,15 @@ Host ssh.r0b.io r0b.io
 Host homelab.r0b.io homelab
   HostName homelab.r0b.io
   User rob
-  Port 33022
+  Port 30022
 
 Host aero
   HostName aero.local
 Host bounty
   HostName bounty.local
-  ProxyJump aero
 Host chomp
   HostName chomp.local
-  ProxyJump aero
 Host daim
   HostName daim.local
-  ProxyJump aero
 Host eclair
   HostName eclair.local
-  ProxyJump aero
