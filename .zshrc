@@ -33,6 +33,9 @@ alias drmi='docker images -q |xargs docker rmi'
 alias d1='docker run -it --rm'
 alias k='kubectl'
 
+# https://adamj.eu/tech/2025/05/08/docker-disable-adverts/
+export DOCKER_CLI_HINTS=false
+
 # start/stop Docker
 alias dup='open /Applications/Docker.app'
 alias ddown='killall Docker'
