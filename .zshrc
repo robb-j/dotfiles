@@ -148,6 +148,10 @@ PROMPT='$(kube_ps1)'$PROMPT
 bindkey '^H' backward-kill-word
 bindkey '^[[3;5~' kill-word
 
+# 
+# Add custom scripts
+# 
+export PATH="${PATH}:${DOTFILES_DIR}/scripts"
 
 #
 # Add PlatformIO to the path
