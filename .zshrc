@@ -32,6 +32,7 @@ alias dce='docker compose exec'
 alias drmi='docker images -q |xargs docker rmi'
 alias d1='docker run -it --rm'
 alias k='kubectl'
+alias c='kubectl rook-ceph ceph'
 
 # https://adamj.eu/tech/2025/05/08/docker-disable-adverts/
 export DOCKER_CLI_HINTS=false

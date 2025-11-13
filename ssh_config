@@ -18,7 +18,7 @@ Host ssh.r0b.io r0b.io
 Host homelab.r0b.io homelab
   HostName homelab.r0b.io
   User rob
-  Port 30022
+  Port 33022
 
 Host aero
   HostName aero.local
